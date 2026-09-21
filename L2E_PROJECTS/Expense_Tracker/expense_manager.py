@@ -43,7 +43,7 @@ class ExpenseManager:
 
     def view_expenses_by_category(self, category_search):
         found = False
-        for idx, expense in enumerate(self.expenses, start = 1):
+        for expense in self.expenses:
             if expense.category == category_search:
                 print(f"Id: {expense.id}\nCategory: {expense.category}\nAmount: {expense.amount}\nDescription: {expense.description}")
                 print()
@@ -51,4 +51,27 @@ class ExpenseManager:
         if not found:
             print("Category not found.")
 
+    def get_expense_by_id(self, identity_number):
+        found_id = False
+        for expense in self.expenses:
+            if expense.id == identity_number:
+                print(f"Id: {expense.id}\nCategory: {expense.category}\nAmount: {expense.amount}\nDescription: {expense.description}")
+                found_id = True
+                return expense
+        if not found_id:
+                print(f"Id {identity_number} does not exist.")
+
+    def update_expense_by_id(self, id_search, new_category, new_amount, new_description):
+        foundExistingExpense = False
+        for existingExpense in self.expenses:
+            if existingExpense.id == id_search:
+                if new_category != "":
+                    existingExpense.category = new_category
+                if new_amount != "":
+                    existingExpense.amount = float(new_amount)
+                if new_description != "":
+                    existingExpense.description = new_description
+            foundExistingExpense = True
+        if not foundExistingExpense:
+            print(f"Expense with id {id_search} not found.")
         
