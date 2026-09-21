@@ -1,0 +1,59 @@
+from Models.expense import Expense
+from expense_manager import ExpenseManager
+
+# e = Expense("Food", 200.0, "To eat")
+# print(e)
+# print(vars(e))
+
+def display_menu():
+    print("====== EXPENSE TRACKER ======")
+    print("1. Add Expense")
+    print("2. View All Expenses")
+    print("3. View Expenses By Category")
+    print("4. Find Expense")
+    print("5. Update Expense")
+    print("6. Delete Expense")
+    print("7. View Total")
+    print("0. Exit")
+
+manager = ExpenseManager()
+manager.read_expenses()
+choice = ""
+
+CATEGORIES = ["Food", "Transport", "Enjoyment"]
+while choice != "0":
+    display_menu()
+    choice = input("Choose an option: ")
+    match choice:
+
+        case "1":
+            for number, category in enumerate(CATEGORIES, start=1):
+                print(f"{number}. {category}")
+            custom_category = len(CATEGORIES)+1
+            print(f"{custom_category}. Enter my own category")
+            cat = input("Enter an option: ")
+            if cat == "4":
+                new_category = input("Enter your category name: ")
+                CATEGORIES.append(new_category)
+            cat = CATEGORIES[int(cat) -1]
+            while True:
+                try:
+                    amt = float(input("Enter the expense amount: "))
+                    break
+                except ValueError:
+                    print("Amount must be a number.")
+            descrp = input("What was the expense for? Add a description: ")
+            expense = Expense(cat, amt, descrp)
+            manager.add_expense(expense)
+
+        case "2":
+            manager.view_expenses()
+
+        case "3":
+            search_cat = input("What expense category do you want to get?: ")
+            manager.view_expenses_by_category(search_cat)
+        case "0":
+            print("Thank you for using the expense tracker, we'd love to see you again.")
+        case _:
+            print("Invalid entry. Please, choose from the menu.")
+
