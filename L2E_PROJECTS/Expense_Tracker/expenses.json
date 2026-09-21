@@ -16,17 +16,5 @@
         "amount": 3000.0,
         "description": "fun",
         "id": 3
-    },
-    {
-        "category": "alms",
-        "amount": 200.0,
-        "description": "alms given",
-        "id": 4
-    },
-    {
-        "category": "Food",
-        "amount": 2000.0,
-        "description": "Brunch",
-        "id": 5
     }
 ]

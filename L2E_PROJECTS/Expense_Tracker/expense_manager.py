@@ -76,4 +76,16 @@ class ExpenseManager:
             print(f"Expense with id {id_search} not found.")
         else:
             self.save_expenses() #does not update the json file without this line.
+
+    def delete_expense_by_id(self, id_delete):
+        found = False
+        for expense in self.expenses:
+            if expense.id == id_delete:
+                self.expenses.remove(expense)
+                print(f"Expense {expense.id} deteleted successfully!")
+                found = True
+        if not found:
+            print(f"Expense with id {id_delete} not found.")
+        else:
+            self.save_expenses()
         

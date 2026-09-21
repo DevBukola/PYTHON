@@ -61,6 +61,10 @@ while choice != "0":
             new_amount = input("What is the new amount?: ")
             new_description = input("What is the new description?: ")
             manager.update_expense_by_id(update_expense_id, new_category, new_amount, new_description)
+
+        case "6":
+            delete_expense_id = int(input("Enter the id of the expense you want to delete: "))
+            manager.delete_expense_by_id(delete_expense_id)
         case "0":
             print("Thank you for using the expense tracker, we'd love to see you again.")
         case _:
