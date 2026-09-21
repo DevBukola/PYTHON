@@ -74,4 +74,6 @@ class ExpenseManager:
             foundExistingExpense = True
         if not foundExistingExpense:
             print(f"Expense with id {id_search} not found.")
+        else:
+            self.save_expenses() #does not update the json file without this line.
         
