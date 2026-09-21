@@ -45,8 +45,10 @@ class ExpenseManager:
         found = False
         for idx, expense in enumerate(self.expenses, start = 1):
             if expense.category == category_search:
-                print(f"Id: hi{idx}\nCategory: {expense.category}\nAmount: {expense.amount}\nDescription: {expense.description}")
+                print(f"Id: {expense.id}\nCategory: {expense.category}\nAmount: {expense.amount}\nDescription: {expense.description}")
                 print()
                 found = True
         if not found:
             print("Category not found.")
+
+        
