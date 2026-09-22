@@ -45,6 +45,7 @@ while choice != "0":
             descrp = input("What was the expense for? Add a description: ")
             expense = Expense(cat, amt, descrp)
             manager.add_expense(expense)
+            print(f"Expense added successfully!\nCategory: {cat}\nAmount: {amt}\n")
 
         case "2":
             manager.view_expenses()
@@ -52,9 +53,11 @@ while choice != "0":
         case "3":
             search_cat = input("What expense category do you want to get?: ")
             manager.view_expenses_by_category(search_cat)
+
         case "4":
             find_expense_id = int(input("What is the id of the expense you want to search?: "))
             manager.get_expense_by_id(find_expense_id)
+
         case "5":
             update_expense_id = int(input("What is the id of the expense you want to update?: "))
             new_category = input("What category do you want change to?: ")
@@ -65,8 +68,13 @@ while choice != "0":
         case "6":
             delete_expense_id = int(input("Enter the id of the expense you want to delete: "))
             manager.delete_expense_by_id(delete_expense_id)
+
+        case "7":
+            manager.view_total_expense_amount()
+
         case "0":
             print("Thank you for using the expense tracker, we'd love to see you again.")
+
         case _:
             print("Invalid entry. Please, choose from the menu.")
 

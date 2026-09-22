@@ -38,7 +38,7 @@ class ExpenseManager:
                 print("No expense yet.\n\n")
                 return
         for expense in self.expenses:
-            print(f"Id:{expense.id}\nCategory: {expense.category}\nAmount: {expense.amount}\nDescription: {expense.description}")
+            print(f"Id: {expense.id}\nCategory: {expense.category}\nAmount: {expense.amount}\nDescription: {expense.description}")
             print()
 
     def view_expenses_by_category(self, category_search):
@@ -88,4 +88,11 @@ class ExpenseManager:
             print(f"Expense with id {id_delete} not found.")
         else:
             self.save_expenses()
-        
+
+
+    def view_total_expense_amount(self):
+        total = 0
+        for expense in self.expenses:
+            # print(f"{expense.amount} + ")
+            total += int(expense.amount)
+        print(f"Total expenses is {total}.")
