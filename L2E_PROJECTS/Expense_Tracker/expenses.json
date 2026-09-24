@@ -1,20 +1,44 @@
 [
-    {
-        "category": "Food",
-        "amount": 3200.0,
-        "description": "Lunch",
-        "id": 1
-    },
-    {
-        "category": "Transport",
-        "amount": 300.0,
-        "description": "fare",
-        "id": 2
-    },
-    {
-        "category": "Enjoyment",
-        "amount": 3000.0,
-        "description": "fun",
-        "id": 3
-    }
+   {
+      "category": "Food",
+      "amount": 2000.0,
+      "description": "food",
+      "id": "1"
+   },
+   {
+      "category": "Transport",
+      "amount": 400.0,
+      "description": "fare",
+      "id": "2"
+   },
+   {
+      "category": "Food",
+      "amount": 500.0,
+      "description": "snacks",
+      "id": "3"
+   },
+   {
+      "category": "Food",
+      "amount": 2000.0,
+      "description": "eat",
+      "id": "4"
+   },
+   {
+      "category": "Food",
+      "amount": 200.0,
+      "description": "food",
+      "id": "5"
+   },
+   {
+      "category": "Transport",
+      "amount": 500.0,
+      "description": "fare",
+      "id": "6"
+   },
+   {
+      "category": "Food",
+      "amount": 2000.0,
+      "description": "food",
+      "id": "7"
+   }
 ]

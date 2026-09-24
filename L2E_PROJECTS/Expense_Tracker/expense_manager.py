@@ -2,7 +2,7 @@ import json
 from Models.expense import Expense
 
 class ExpenseManager:
-    def __init__(self):
+    def __init__(self): #automatically runs when an object is created.
         self.expenses = []
 
     def save_expenses(self):
@@ -11,7 +11,7 @@ class ExpenseManager:
             data.append(vars(expense))
 
         with open("expenses.json", "w") as file:
-            json.dump(data, file, indent=4)
+            json.dump(data, file, indent=3)
 
     def read_expenses(self):
         try:
@@ -24,12 +24,13 @@ class ExpenseManager:
 
     def add_expense(self, expense):
         if not self.expenses: #if there is no expense already, the added expense get id of 1.
-            expense.id = 1
+            expense.id = "1"
         else:
             ids = []
-            for existingIds in self.expenses:
-                ids.append(existingIds.id)
+            for existing_expense in self.expenses:
+                ids.append(int((existing_expense.id)))
             expense.id = max(ids)+1
+            expense.id = str(expense.id)
         self.expenses.append(expense)
         self.save_expenses()
 
@@ -62,31 +63,30 @@ class ExpenseManager:
                 print(f"Id {identity_number} does not exist.")
 
     def update_expense_by_id(self, id_search, new_category, new_amount, new_description):
-        foundExistingExpense = False
         for existingExpense in self.expenses:
             if existingExpense.id == id_search:
+                
                 if new_category != "":
                     existingExpense.category = new_category
                 if new_amount != "":
                     existingExpense.amount = float(new_amount)
                 if new_description != "":
                     existingExpense.description = new_description
-            foundExistingExpense = True
-        if not foundExistingExpense:
-            print(f"Expense with id {id_search} not found.")
-        else:
-            self.save_expenses() #does not update the json file without this line.
+                self.save_expenses() #does not update the json file without this line.
+                return True
+        return False
+            
 
     def delete_expense_by_id(self, id_delete):
         found = False
-        for expense in self.expenses:
-            if expense.id == id_delete:
-                self.expenses.remove(expense)
-                print(f"Expense {expense.id} deteleted successfully!")
-                found = True
         if not found:
             print(f"Expense with id {id_delete} not found.")
         else:
+            for expense in self.expenses:
+                if expense.id == id_delete:
+                    self.expenses.remove(expense)
+                print(f"Expense {expense.id} deleted successfully!")
+                found = True
             self.save_expenses()
 
 
