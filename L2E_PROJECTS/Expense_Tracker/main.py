@@ -53,10 +53,10 @@ while True:
                 while True:
                     new_category = input("Enter your category name: ")
                     if new_category == "" or new_category.isdigit():
-                        print("category name cannot be empty, and cannot be a digit.")
+                        print("category cannot be empty, and cannot be a digit.")
                         continue
                     elif len(new_category) <= 3:
-                        print("Length of category name must be greater than three.")
+                        print("Category must be longer than three characters and contain only letters.")
                         continue
                     elif not new_category.isalpha():
                         print("This contains something other than alphabets.")

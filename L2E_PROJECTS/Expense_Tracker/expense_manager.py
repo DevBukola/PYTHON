@@ -45,7 +45,7 @@ class ExpenseManager:
     def view_expenses_by_category(self, category_search):
         found = False
         for expense in self.expenses:
-            if expense.category == category_search:
+            if expense.category.lower() == category_search.strip().lower():
                 print(f"Id: {expense.id}\nCategory: {expense.category}\nAmount: {expense.amount}\nDescription: {expense.description}")
                 print()
                 found = True

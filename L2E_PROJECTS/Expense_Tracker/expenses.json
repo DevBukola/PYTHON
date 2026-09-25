@@ -46,5 +46,11 @@
       "amount": "4000",
       "description": "Bought a book",
       "id": "8"
+   },
+   {
+      "category": "transport",
+      "amount": "300",
+      "description": "tt",
+      "id": "9"
    }
 ]
