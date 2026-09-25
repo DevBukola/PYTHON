@@ -1,44 +1,50 @@
 [
    {
       "category": "Food",
-      "amount": 2000.0,
-      "description": "food",
+      "amount": 400.0,
+      "description": "snack",
       "id": "1"
    },
    {
-      "category": "Transport",
-      "amount": 400.0,
-      "description": "fare",
+      "category": "Food",
+      "amount": 3000.0,
+      "description": "to eat",
       "id": "2"
    },
    {
-      "category": "Food",
+      "category": "transport",
       "amount": 500.0,
-      "description": "snacks",
+      "description": "fare fare",
       "id": "3"
    },
    {
-      "category": "Food",
-      "amount": 2000.0,
-      "description": "eat",
+      "category": "alms",
+      "amount": 4.0,
+      "description": "alms",
       "id": "4"
    },
    {
-      "category": "Food",
-      "amount": 200.0,
-      "description": "food",
+      "category": "Health",
+      "amount": "3000",
+      "description": "check-up",
       "id": "5"
    },
    {
-      "category": "Transport",
-      "amount": 500.0,
-      "description": "fare",
+      "category": "funnn",
+      "amount": 400.0,
+      "description": "rr",
       "id": "6"
    },
    {
       "category": "Food",
-      "amount": 2000.0,
-      "description": "food",
+      "amount": "2000",
+      "description": "chicken",
       "id": "7"
+   },
+   {
+      "category": "Book",
+      "amount": "4000",
+      "description": "Bought a book",
+      "id": "8"
    }
 ]

@@ -78,16 +78,18 @@ class ExpenseManager:
             
 
     def delete_expense_by_id(self, id_delete):
-        found = False
-        if not found:
-            print(f"Expense with id {id_delete} not found.")
-        else:
-            for expense in self.expenses:
-                if expense.id == id_delete:
-                    self.expenses.remove(expense)
+        for expense in self.expenses:
+            if expense.id == id_delete:
+                self.expenses.remove(expense)
                 print(f"Expense {expense.id} deleted successfully!")
-                found = True
-            self.save_expenses()
+
+                for remaining_expense in self.expenses:
+                    if int(remaining_expense.id) > int(id_delete):
+                        remaining_expense.id = str(int(remaining_expense.id) - 1)
+                self.save_expenses()
+                return True
+
+        return False
 
 
     def view_total_expense_amount(self):
